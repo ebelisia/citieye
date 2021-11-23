@@ -15,6 +15,7 @@ import lombok.Setter;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OccurrenceDto {
+    private Long id;
     private String description;
     private User user;
     private City city;

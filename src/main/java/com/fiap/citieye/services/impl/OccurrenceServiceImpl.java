@@ -1,9 +1,11 @@
 package com.fiap.citieye.services.impl;
 
 import com.fiap.citieye.mapper.OccurrenceMapper;
+import com.fiap.citieye.model.Category;
 import com.fiap.citieye.model.Occurrence;
 import com.fiap.citieye.model.User;
 import com.fiap.citieye.model.dto.OccurrenceDto;
+import com.fiap.citieye.repository.CategoryRepository;
 import com.fiap.citieye.repository.OccurrenceRepository;
 import com.fiap.citieye.repository.UserRepository;
 import com.fiap.citieye.services.OccurrenceService;
@@ -23,15 +25,19 @@ public class OccurrenceServiceImpl implements OccurrenceService {
 
     @Autowired
     private UserServiceImpl userService;
-
+//
     @Autowired
     private CityServiceImpl cityService;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @Override
     public OccurrenceDto saveOccurrence(final Occurrence occurrence, final Long userId) {
         try {
             occurrence.setUser(userService.getUser(userId).get());
             occurrence.setCity(cityService.getCityById(occurrence.getCity().getId()).get());
+            occurrence.setCategory(categoryRepository.getById(occurrence.getCategory().getId()));
             return occurrenceMapper.mapRegisterOccurrenceToOccurrenceDto(occurrenceRepository.save(occurrence));
         } catch (Exception e) {
             throw e;

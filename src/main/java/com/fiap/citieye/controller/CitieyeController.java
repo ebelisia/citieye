@@ -14,6 +14,7 @@ import com.fiap.citieye.services.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+//@CrossOrigin(origins = "http://localhost:5000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CitieyeController implements Citieye {
 
     @Autowired

@@ -12,5 +12,6 @@ public interface OccurrenceService {
     List<OccurrenceDto> getAllOccurrence();
     List<OccurrenceDto> getAllOccurrenceByCity(final Long city);
     List<OccurrenceDto> getAllOccurrenceByUserId(final Long userId);
+    void deleteOccurrence(final Long occurrenceId);
 
 }

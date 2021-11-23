@@ -65,4 +65,9 @@ public class OccurrenceServiceImpl implements OccurrenceService {
         return occurrenceMapper.mapListRegisterOccurrenceToOccurrenceDto(occurrenceRepository.findAllByUserId(userId));
     }
 
+    @Override
+    public void deleteOccurrence(Long occurrenceId) {
+        occurrenceRepository.deleteById(occurrenceId);
+    }
+
 }

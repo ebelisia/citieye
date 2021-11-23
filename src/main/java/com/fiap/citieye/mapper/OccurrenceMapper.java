@@ -33,9 +33,13 @@ public class OccurrenceMapper {
         OccurrenceDto occurrenceBuilder = OccurrenceDto.builder().build();
 
         for(Occurrence occurrence : occurrences){
+            occurrenceBuilder.setCategory(occurrence.getCategory());
             occurrenceBuilder.setId(occurrence.getId());
             occurrenceBuilder.setCity(occurrence.getCity());
             occurrenceBuilder.setDescription(occurrence.getDescription());
+            occurrenceBuilder.setLocal(occurrence.getLocal());
+            occurrenceBuilder.setAddress(occurrence.getAddress());
+            occurrenceBuilder.setTitle(occurrence.getTitle());
             user.setName(occurrence.getUser().getName());
             user.setSurname(occurrence.getUser().getSurname());
             occurrenceBuilder.setUser(user);

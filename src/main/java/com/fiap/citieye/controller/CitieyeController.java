@@ -47,6 +47,11 @@ public class CitieyeController implements Citieye {
     }
 
     @Override
+    public void deleteOccurrence(Long occurrenceId) {
+        occurrenceService.deleteOccurrence(occurrenceId);
+    }
+
+    @Override
     public ResponseEntity<List<OccurrenceDto>> showAllOccurrenceByUserId(final Long userId) {
         return new ResponseEntity<>(occurrenceService.getAllOccurrenceByUserId(userId), HttpStatus.OK);
     }

@@ -8,7 +8,7 @@ INSERT INTO citieye.city(id, name)VALUES(3, 'Minas Gerais');
 INSERT INTO citieye.city(id, name)VALUES(5, 'Espirito Santo');
 
 --USER
-INSERT INTO citieye.user(id, email, name, surname)VALUES(1, 'joaodasilva@gmail.com', 'João', 'Da Silva');
+INSERT INTO citieye.user(id, email, name, surname)VALUES(1, 'joaquinbarbosa@gmail.com', 'Joaquin', 'Barbosa');
 INSERT INTO citieye.user(id, email, name, surname)VALUES(2, 'joaquinoliveira@gmail.com', 'senha123', 'Oliveira');
 INSERT INTO citieye.user(id, email, name, surname)VALUES(3, 'mariarosa@gmail.com', 'Maria', 'Rosa');
 

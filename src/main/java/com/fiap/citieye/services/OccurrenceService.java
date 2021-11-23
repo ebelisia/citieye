@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface OccurrenceService {
 
-    OccurrenceDto saveOccurrence(final Occurrence occurrence, final Long userId);
+    OccurrenceDto saveOccurrence(final Occurrence occurrence);
     Occurrence getOccurrence(final Long occurrenceId);
     List<OccurrenceDto> getAllOccurrence();
     List<OccurrenceDto> getAllOccurrenceByCity(final Long city);

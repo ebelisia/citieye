@@ -41,9 +41,8 @@ public class CitieyeController implements Citieye {
     private CategoryServiceImpl categoryService;
 
     @Override
-    public ResponseEntity<OccurrenceDto> registerOccurrence(final @RequestBody Occurrence occurrence,
-                                                            final @RequestParam(name = "userId") Long userId) {
-        return new ResponseEntity<>(occurrenceService.saveOccurrence(occurrence, userId), HttpStatus.OK);
+    public ResponseEntity<OccurrenceDto> registerOccurrence(final @RequestBody Occurrence occurrence) {
+        return new ResponseEntity<>(occurrenceService.saveOccurrence(occurrence), HttpStatus.OK);
     }
 
     @Override

@@ -25,7 +25,7 @@ public class OccurrenceServiceImpl implements OccurrenceService {
 
     @Autowired
     private UserServiceImpl userService;
-//
+
     @Autowired
     private CityServiceImpl cityService;
 
@@ -33,9 +33,10 @@ public class OccurrenceServiceImpl implements OccurrenceService {
     private CategoryRepository categoryRepository;
 
     @Override
-    public OccurrenceDto saveOccurrence(final Occurrence occurrence, final Long userId) {
+    public OccurrenceDto saveOccurrence(final Occurrence occurrence) {
         try {
-            occurrence.setUser(userService.getUser(userId).get());
+            User user = userService.saveUser(occurrence.getUser());
+            occurrence.setUser(user);
             occurrence.setCity(cityService.getCityById(occurrence.getCity().getId()).get());
             occurrence.setCategory(categoryRepository.getById(occurrence.getCategory().getId()));
             return occurrenceMapper.mapRegisterOccurrenceToOccurrenceDto(occurrenceRepository.save(occurrence));

@@ -22,8 +22,8 @@ public interface Citieye {
 
     @CrossOrigin(origins = "https://citieye-app.herokuapp.com")
     @PostMapping("/occurrences")
-    ResponseEntity<OccurrenceDto> registerOccurrence(final @RequestBody Occurrence occurrence,
-                                                     final @RequestParam Long userid);
+    ResponseEntity<OccurrenceDto> registerOccurrence(final @RequestBody Occurrence occurrence);
+
     @CrossOrigin(origins = "https://citieye-app.herokuapp.com")
     @PostMapping("/occurrences/{id}")
     void deleteOccurrence(final @PathVariable Long occurrenceId);

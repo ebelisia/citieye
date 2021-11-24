@@ -9,9 +9,9 @@ public interface OccurrenceService {
 
     OccurrenceDto saveOccurrence(final Occurrence occurrence);
     Occurrence getOccurrence(final Long occurrenceId);
-    List<OccurrenceDto> getAllOccurrence();
-    List<OccurrenceDto> getAllOccurrenceByCity(final Long city);
-    List<OccurrenceDto> getAllOccurrenceByUserId(final Long userId);
+    List<Occurrence> getAllOccurrence();
+    List<Occurrence> getAllOccurrenceByCity(final Long city);
+    List<Occurrence> getAllOccurrenceByUserId(final Long userId);
     void deleteOccurrence(final Long occurrenceId);
 
 }

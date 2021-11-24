@@ -36,7 +36,6 @@ public class CitieyeController implements Citieye {
     @Autowired
     private CityServiceImpl cityService;
 
-
     @Autowired
     private CategoryServiceImpl categoryService;
 
@@ -51,17 +50,17 @@ public class CitieyeController implements Citieye {
     }
 
     @Override
-    public ResponseEntity<List<OccurrenceDto>> showAllOccurrenceByUserId(final Long userId) {
+    public ResponseEntity<List<Occurrence>> showAllOccurrenceByUserId(final Long userId) {
         return new ResponseEntity<>(occurrenceService.getAllOccurrenceByUserId(userId), HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<List<OccurrenceDto>> showAllOccurrence() {
+    public ResponseEntity<List<Occurrence>> showAllOccurrence() {
         return new ResponseEntity<>(occurrenceService.getAllOccurrence(), HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<List<OccurrenceDto>> showAllOccurrenceByCity(final Long city) {
+    public ResponseEntity<List<Occurrence>> showAllOccurrenceByCity(final Long city) {
         return new ResponseEntity<>(occurrenceService.getAllOccurrenceByCity(city), HttpStatus.OK);
     }
 

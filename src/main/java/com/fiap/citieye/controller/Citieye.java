@@ -30,15 +30,15 @@ public interface Citieye {
 
     @CrossOrigin(origins = "https://citieye-app.herokuapp.com")
     @GetMapping("/occurrences/all")
-    ResponseEntity<List<OccurrenceDto>> showAllOccurrence();
+    ResponseEntity<List<Occurrence>> showAllOccurrence();
 
     @CrossOrigin(origins = "https://citieye-app.herokuapp.com")
     @GetMapping("/occurrences/city/{city}")
-    ResponseEntity<List<OccurrenceDto>> showAllOccurrenceByCity(@PathVariable Long city);
+    ResponseEntity<List<Occurrence>> showAllOccurrenceByCity(@PathVariable Long city);
 
     @CrossOrigin(origins = "https://citieye-app.herokuapp.com")
     @GetMapping("/occurrences/user/{userId}")
-    ResponseEntity<List<OccurrenceDto>> showAllOccurrenceByUserId(@PathVariable Long userId);
+    ResponseEntity<List<Occurrence>> showAllOccurrenceByUserId(@PathVariable Long userId);
 
     @CrossOrigin(origins = "https://citieye-app.herokuapp.com")
     @PostMapping("/users")

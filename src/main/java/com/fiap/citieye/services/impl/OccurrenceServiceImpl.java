@@ -52,18 +52,18 @@ public class OccurrenceServiceImpl implements OccurrenceService {
     }
 
     @Override
-    public List<OccurrenceDto> getAllOccurrence() {
-        return occurrenceMapper.mapListRegisterOccurrenceToOccurrenceDto(occurrenceRepository.findAll());
+    public List<Occurrence> getAllOccurrence() {
+        return occurrenceRepository.findAll();
     }
 
     @Override
-    public List<OccurrenceDto> getAllOccurrenceByCity(final Long city) {
-        return occurrenceMapper.mapListRegisterOccurrenceToOccurrenceDto(occurrenceRepository.findAllByCityId(city));
+    public List<Occurrence> getAllOccurrenceByCity(final Long city) {
+        return occurrenceRepository.findAllByCityId(city);
     }
 
     @Override
-    public List<OccurrenceDto> getAllOccurrenceByUserId(final Long userId) {
-        return occurrenceMapper.mapListRegisterOccurrenceToOccurrenceDto(occurrenceRepository.findAllByUserId(userId));
+    public List<Occurrence> getAllOccurrenceByUserId(final Long userId) {
+        return occurrenceRepository.findAllByUserId(userId);
     }
 
     @Override
